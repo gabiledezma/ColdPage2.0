@@ -44,9 +44,9 @@ public class ControladorUsuario {
     }
 
     @PostMapping("/registro")
-    public String registro(ModelMap modelo, @RequestParam String email, @RequestParam String pw1, @RequestParam String pw2, @RequestParam String nombre, @RequestParam String contacto, @RequestParam String fechaDeNacimiento, @RequestParam String pais, @RequestParam String provincia, @RequestParam String localidad) {
+    public String registro(ModelMap modelo, @RequestParam String email, @RequestParam String pw1, @RequestParam String pw2, @RequestParam String nombre, @RequestParam String contacto, @RequestParam String fechaDeNacimiento, @RequestParam String pais, @RequestParam String provincia, @RequestParam String localidad, @RequestParam String profesion) {
         try {
-            Usuario u = su.crearUsuario(email, pw1, pw2, nombre, contacto, fechaDeNacimiento, pais, provincia, localidad);
+            Usuario u = su.crearUsuario(email, pw1, pw2, nombre, contacto, fechaDeNacimiento, pais, provincia, localidad, profesion);
             modelo.put("exito", "Registro exitoso.");
             return "redirect:/";
         } catch (Exception e) {
@@ -67,7 +67,7 @@ public class ControladorUsuario {
     }
 
     @PostMapping("/editar")
-    public String editarPerfil(@RequestParam String id, @RequestParam String email, @RequestParam String pw1  , RedirectAttributes redirectAttributes, ModelMap model, @RequestParam String profesion, @RequestParam String pais, @RequestParam String provincia, @RequestParam String localidad, @RequestParam String nombre, @RequestParam String contacto, @RequestParam String fechaDeNacimiento, @RequestParam String fotourl) {
+    public String editarPerfil(@RequestParam String id, @RequestParam String email, @RequestParam String pw1, RedirectAttributes redirectAttributes, ModelMap model, @RequestParam String profesion, @RequestParam String pais, @RequestParam String provincia, @RequestParam String localidad, @RequestParam String nombre, @RequestParam String contacto, @RequestParam String fechaDeNacimiento, @RequestParam String fotourl) {
         try {
             Usuario u = su.modificarUsuario(id, email, pw1, profesion, pais, provincia, localidad, nombre, contacto, fechaDeNacimiento, fotourl);
             model.put("exito", "Usuario modificado con exito");
@@ -164,4 +164,63 @@ public class ControladorUsuario {
         return "redirect:/usuario/perfil";
     }
 
+    @GetMapping("/listarPorNombre")
+    public String listarPorNombre(@RequestParam String nombre, ModelMap model) {
+        try {
+            List<Usuario> profesionales = su.buscarPorNombre(nombre);
+            model.put("profesionales", profesionales);
+        } catch (Exception e) {
+        }
+        return "list-profesionales";
+    }
+
+    @GetMapping("/listarPorProfesion")
+    public String listarPorProfesion(@RequestParam String profesion, ModelMap model) {
+        try {
+            List<Usuario> profesionales = su.buscarPorProfesion(profesion);
+            model.put("profesionales", profesionales);
+        } catch (Exception e) {
+        }
+        return "list-profesionales";
+    }
+
+    @GetMapping("/listarPorPais")
+    public String listarPorPais(@RequestParam String pais, ModelMap model) {
+        try {
+            List<Usuario> profesionales = su.buscarPorPais(pais);
+            model.put("profesionales", profesionales);
+        } catch (Exception e) {
+        }
+        return "list-profesionales";
+    }
+
+    @GetMapping("/listarPorProvincia")
+    public String listarPorProvincia(@RequestParam String provincia, ModelMap model) {
+        try {
+            List<Usuario> profesionales = su.buscarPorProvincia(provincia);
+            model.put("profesionales", profesionales);
+        } catch (Exception e) {
+        }
+        return "list-profesionales";
+    }
+
+    @GetMapping("/listarPorLocalidad")
+    public String listarPorLocalidad(@RequestParam String localidad, ModelMap model) {
+        try {
+            List<Usuario> profesionales = su.buscarPorLocalidad(localidad);
+            model.put("profesionales", profesionales);
+        } catch (Exception e) {
+        }
+        return "list-profesionales";
+    }
+
+    @GetMapping("/listarTodos")
+    public String listarTodos(ModelMap model) {
+        try {
+            List<Usuario> profesionales = su.findAll();
+            model.put("profesionales", profesionales);
+        } catch (Exception e) {
+        }
+        return "list-profesionales";
+    }
 }

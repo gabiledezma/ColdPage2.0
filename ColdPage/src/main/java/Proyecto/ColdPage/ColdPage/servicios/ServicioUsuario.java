@@ -29,7 +29,7 @@ public class ServicioUsuario implements UserDetailsService {
     private RepositorioUsuario ru;
 
     @Transactional
-    public Usuario crearUsuario(String email, String pw1, String pw2, String nombre, String contacto, String fechaDeNacimiento, String pais, String provincia, String localidad) throws Exception {
+    public Usuario crearUsuario(String email, String pw1, String pw2, String nombre, String contacto, String fechaDeNacimiento, String pais, String provincia, String localidad, String profesion) throws Exception {
         try {
             validar(email, pw1, pw2, nombre, contacto, fechaDeNacimiento, pais, provincia, localidad);
             Usuario usuario = new Usuario();
@@ -49,7 +49,11 @@ public class ServicioUsuario implements UserDetailsService {
             usuario.setFechaDeNacimiento(fecha);
             String domicilio = localidad + ", " + provincia + ", " + pais;
             usuario.setDomicilio(domicilio);
+            usuario.setPais(pais);
+            usuario.setProvincia(provincia);
+            usuario.setLocalidad(localidad);
             usuario.setFoto(null);
+            usuario.setProfesion(profesion);
             return ru.save(usuario);
         } catch (Exception e) {
             System.err.println(e.getMessage());
@@ -84,6 +88,9 @@ public class ServicioUsuario implements UserDetailsService {
             } else {
                 String domicilio = localidad + ", " + provincia + ", " + pais;
                 u.setDomicilio(domicilio);
+                u.setPais(pais);
+                u.setProvincia(provincia);
+                u.setLocalidad(localidad);
             }
             if (nombre == null || nombre.trim().isEmpty()) {
                 u.setNombre(u.getNombre());
@@ -247,6 +254,26 @@ public class ServicioUsuario implements UserDetailsService {
             throw new Exception("Las contraseñas no coinciden");
         }
         return ru.save(u);
+    }
+
+    @Transactional
+    public List<Usuario> buscarPorNombre(String nombre) {
+        return ru.buscarPorNombre(nombre);
+    }
+
+    @Transactional
+    public List<Usuario> buscarPorPais(String pais) {
+        return ru.buscarPorPais(pais);
+    }
+
+    @Transactional
+    public List<Usuario> buscarPorProvincia(String provincia) {
+        return ru.buscarPorProvincia(provincia);
+    }
+
+    @Transactional
+    public List<Usuario> buscarPorLocalidad(String localidad) {
+        return ru.buscarPorLocalidad(localidad);
     }
 
 }

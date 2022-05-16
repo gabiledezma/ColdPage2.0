@@ -15,5 +15,17 @@ public interface RepositorioUsuario extends JpaRepository<Usuario, String> {
 
     @Query("SELECT u FROM Usuario u WHERE u.profesion = :profesion")
     public List<Usuario> buscarPorProfesion(@Param("profesion") String profesion);
+    
+    @Query("SELECT u FROM Usuario u WHERE u.nombre = :nombre")
+    public List<Usuario> buscarPorNombre(@Param("nombre") String nombre);
+    
+    @Query("SELECT u FROM Usuario u WHERE u.pais = :pais")
+    public List<Usuario> buscarPorPais(@Param("pais") String pais);
+    
+    @Query("SELECT u FROM Usuario u WHERE u.provincia = :provincia")
+    public List<Usuario> buscarPorProvincia(@Param("provincia") String provincia);
+    
+    @Query("SELECT u FROM Usuario u WHERE u.localidad = :localidad")
+    public List<Usuario> buscarPorLocalidad(@Param("localidad") String localidad);
 
 }
