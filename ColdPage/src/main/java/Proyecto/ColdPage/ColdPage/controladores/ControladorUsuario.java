@@ -243,7 +243,7 @@ public class ControladorUsuario {
         }
         return "list-profesionales";
     }
-    
+
     @GetMapping("/ordenarPorPais")
     public String ordenarPorPais(ModelMap model) {
         try {
@@ -263,7 +263,7 @@ public class ControladorUsuario {
         }
         return "list-profesionales";
     }
-    
+
     @GetMapping("/ordenarPorLocalidad")
     public String ordenarPorLocalidad(ModelMap model) {
         try {
@@ -293,7 +293,7 @@ public class ControladorUsuario {
         }
         return "list-profesionales";
     }
-    
+
     @GetMapping("/ordenarPorPais2")
     public String ordenarPorPais2(ModelMap model) {
         try {
@@ -313,7 +313,7 @@ public class ControladorUsuario {
         }
         return "list-profesionales";
     }
-    
+
     @GetMapping("/ordenarPorLocalidad2")
     public String ordenarPorLocalidad2(ModelMap model) {
         try {
@@ -323,5 +323,5 @@ public class ControladorUsuario {
         }
         return "list-profesionales";
     }
-    
+
 }
