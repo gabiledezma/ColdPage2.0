@@ -35,9 +35,9 @@ public class ControladorPrincipal {
     }
 
     @PostMapping("/")
-    public String registro(ModelMap modelo, @RequestParam String email, @RequestParam String pw1, @RequestParam String pw2, @RequestParam String nombre, @RequestParam String contacto, @RequestParam String fechaDeNacimiento, @RequestParam String pais, @RequestParam String provincia, @RequestParam String localidad) {
+    public String registro(ModelMap modelo, @RequestParam String email, @RequestParam String pw1, @RequestParam String pw2, @RequestParam String nombre, @RequestParam String contacto, @RequestParam String fechaDeNacimiento, @RequestParam String pais, @RequestParam String provincia, @RequestParam String localidad, @RequestParam String profesion) {
         try {
-            Usuario u = su.crearUsuario(email, pw1, pw2, nombre, contacto, fechaDeNacimiento, pais, provincia, localidad);
+            Usuario u = su.crearUsuario(email, pw1, pw2, nombre, contacto, fechaDeNacimiento, pais, provincia, localidad, profesion);
             modelo.put("exito", "Registro exitoso.");
             return "redirect:/";
         } catch (Exception e) {
@@ -56,7 +56,7 @@ public class ControladorPrincipal {
         if (logout != null) {
             model.put("logout", "Desconectado correctamente");
         }
-        return "index";
+        return "login";
     }
 
 }
