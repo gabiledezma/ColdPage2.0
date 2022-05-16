@@ -276,4 +276,44 @@ public class ServicioUsuario implements UserDetailsService {
         return ru.buscarPorLocalidad(localidad);
     }
 
+    public List<Usuario> ordenarPorProfesion() {
+        return ru.ordenarPorProfesion();
+    }
+
+    public List<Usuario> ordenarPorNombre() {
+        return ru.ordenarPorNombre();
+    }
+
+    public List<Usuario> ordenarPorPais() {
+        return ru.ordenarPorPais();
+    }
+
+    public List<Usuario> ordenarPorProvincia() {
+        return ru.ordenarProvincia();
+    }
+
+    public List<Usuario> ordenarPorLocalidad() {
+        return ru.ordenarPorLocalidad();
+    }
+
+    public List<Usuario> ordenarPorProfesion2() {
+        return ru.ordenarPorProfesion2();
+    }
+
+    public List<Usuario> ordenarPorNombre2() {
+        return ru.ordenarPorNombre2();
+    }
+
+    public List<Usuario> ordenarPorPais2() {
+        return ru.ordenarPorPais2();
+    }
+
+    public List<Usuario> ordenarPorProvincia2() {
+        return ru.ordenarProvincia2();
+    }
+
+    public List<Usuario> ordenarPorLocalidad2() {
+        return ru.ordenarPorLocalidad2();
+    }
+
 }

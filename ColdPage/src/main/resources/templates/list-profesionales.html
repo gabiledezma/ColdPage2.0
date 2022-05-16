@@ -27,11 +27,11 @@
                             <li class="nav-item">
                                 <a class="nav-link active" aria-current="page" th:href="@{/}">Inicio</a> <!-- cambiar ruta a futuro feed-->
                             </li>  
-                            <li class="nav-item" sec:authorize="isAuthenticated()">
-                                <a class="nav-link" th:href="@{/usuario/perfil}" th:text="${usuario.nombre}"></a>
-                            </li>
                             <li class="nav-item" sec:authorize="hasRole('ADMIN')">
                                 <a class="nav-link" th:href="@{/admin/}">Lista de Usuarios</a>
+                            </li>
+                            <li class="nav-item" sec:authorize="isAuthenticated()">
+                                <a class="nav-link" th:href="@{/usuario/perfil}" th:text="${usuario.nombre}"></a>
                             </li>
                             <li class="nav-item" sec:authorize="!hasAnyRole('ADMIN','USER')">
                                 <a class="nav-link" th:href="@{/usuario/registro}">Registrarse</a>
@@ -51,18 +51,22 @@
             <table class="table table-dark">
                 <thead>
                     <tr>
-                        <th scope="col">Nombre</th>
-                        <th scope="col">Profesion</th>
-                        <th scope="col">Domicilio</th>
-                        <th scope="col">Telefono</th>
-                        <th scope="col">Foto</th>
+                        <th scope="col"><a th:href="@{/usuario/ordenarPorNombre}" class="btn btn-outline-light">Nombre</a></th>
+                        <th scope="col"><a th:href="@{/usuario/ordenarPorProfesion}" class="btn btn-outline-light">Profesion</a></th>
+                        <th scope="col"><a th:href="@{/usuario/ordenarPorLocalidad}" class="btn btn-outline-light">Localidad</a></th>
+                        <th scope="col"><a th:href="@{/usuario/ordenarPorProvincia}" class="btn btn-outline-light">Provincia</a></th>
+                        <th scope="col"><a th:href="@{/usuario/ordenarPorPais}" class="btn btn-outline-light">Pais</a></th>
+                        <th scope="col"><a th:href="@{#}" class="btn btn-outline-light">Telefono</a></th>
+                        <th scope="col"><a th:href="@{#}" class="btn btn-outline-light">Foto</a></th>
                     </tr>
                 </thead>
                 <tbody th:each="profesional : ${profesionales}"> 
                     <tr>
                         <td th:text="${profesional.nombre}"></td>
                         <td th:text="${profesional.profesion}"></td>
-                        <td th:text="${profesional.domicilio}"></td>
+                        <td th:text="${profesional.localidad}"></td>
+                        <td th:text="${profesional.provincia}"></td>
+                        <td th:text="${profesional.pais}"></td>
                         <td th:text="${profesional.contacto}"></td>
                         <td><img th:src="@{${profesional.foto}}" class="img-thumbnail rounded float-left" th:alt="${profesional.foto}" style="width: 50px; height: 50px;"></td>
                     </tr>
@@ -85,8 +89,8 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
         <script>
             document.getElementById('btn').onclick = function () {
-                var element = document.getElementById('ct-trabajo');
-                var element2 = document.getElementById('ct-publicacion');
+                var element = document.getElementById('nombre');
+                var element2 = document.getElementById('nombre2');
                 var element3 = document.getElementById('ct-trabajos');
                 var element4 = document.getElementById('ct-publicaciones');
                 if (element.style.display === 'none') {
@@ -102,7 +106,10 @@
                     element4.style.display = 'block';
                     document.getElementById('btn').innerText = 'Trabajo';
                 }
+
             }
+
+
         </script>
     </body>
 </html>

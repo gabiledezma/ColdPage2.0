@@ -223,4 +223,105 @@ public class ControladorUsuario {
         }
         return "list-profesionales";
     }
+
+    @GetMapping("/ordenarPorProfesion")
+    public String ordenarPorProfesion(ModelMap model) {
+        try {
+            List<Usuario> profesionales = su.ordenarPorProfesion();
+            model.put("profesionales", profesionales);
+        } catch (Exception e) {
+        }
+        return "list-profesionales";
+    }
+
+    @GetMapping("/ordenarPorNombre")
+    public String ordenarPorNombre(ModelMap model) {
+        try {
+            List<Usuario> profesionales = su.ordenarPorNombre();
+            model.put("profesionales", profesionales);
+        } catch (Exception e) {
+        }
+        return "list-profesionales";
+    }
+
+    @GetMapping("/ordenarPorPais")
+    public String ordenarPorPais(ModelMap model) {
+        try {
+            List<Usuario> profesionales = su.ordenarPorPais();
+            model.put("profesionales", profesionales);
+        } catch (Exception e) {
+        }
+        return "list-profesionales";
+    }
+
+    @GetMapping("/ordenarPorProvincia")
+    public String ordenarPorProvincia(ModelMap model) {
+        try {
+            List<Usuario> profesionales = su.ordenarPorProvincia();
+            model.put("profesionales", profesionales);
+        } catch (Exception e) {
+        }
+        return "list-profesionales";
+    }
+
+    @GetMapping("/ordenarPorLocalidad")
+    public String ordenarPorLocalidad(ModelMap model) {
+        try {
+            List<Usuario> profesionales = su.ordenarPorLocalidad();
+            model.put("profesionales", profesionales);
+        } catch (Exception e) {
+        }
+        return "list-profesionales";
+    }
+
+    @GetMapping("/ordenarPorProfesion2")
+    public String ordenarPorProfesion2(ModelMap model) {
+        try {
+            List<Usuario> profesionales = su.ordenarPorProfesion2();
+            model.put("profesionales", profesionales);
+        } catch (Exception e) {
+        }
+        return "list-profesionales";
+    }
+
+    @GetMapping("/ordenarPorNombre2")
+    public String ordenarPorNombre2(ModelMap model) {
+        try {
+            List<Usuario> profesionales = su.ordenarPorNombre2();
+            model.put("profesionales", profesionales);
+        } catch (Exception e) {
+        }
+        return "list-profesionales";
+    }
+
+    @GetMapping("/ordenarPorPais2")
+    public String ordenarPorPais2(ModelMap model) {
+        try {
+            List<Usuario> profesionales = su.ordenarPorPais2();
+            model.put("profesionales", profesionales);
+        } catch (Exception e) {
+        }
+        return "list-profesionales";
+    }
+
+    @GetMapping("/ordenarPorProvincia2")
+    public String ordenarPorProvincia2(ModelMap model) {
+        try {
+            List<Usuario> profesionales = su.ordenarPorProvincia2();
+            model.put("profesionales", profesionales);
+        } catch (Exception e) {
+        }
+        return "list-profesionales";
+    }
+
+    @GetMapping("/ordenarPorLocalidad2")
+    public String ordenarPorLocalidad2(ModelMap model) {
+        try {
+            List<Usuario> profesionales = su.ordenarPorLocalidad2();
+            model.put("profesionales", profesionales);
+        } catch (Exception e) {
+        }
+        return "list-profesionales";
+    }
+
 }
