@@ -77,14 +77,14 @@ h4{
     left: 30px
 }
 .colormodal{
-    background-color: #68a6e3
+    background-color: #68a6e3;
 }
 .form input::placeholder{
     color: #a6a8a8;
 }
 
 .form input[type="submit"]{
-    background-color: #226fdc;
+    background-color: #68a6e3;
     text-align: center;
     padding: .9rem ,5rem;
     font-weight: 600;
@@ -102,7 +102,7 @@ h4{
 }
 
 .form span a{
-    color: #8cb6f0;
+    color: #68a6e3;
     text-decoration: none;
 }
 
@@ -116,7 +116,7 @@ h4{
 .form button{
     width: 50%;
     margin: auto;
-    background-color: #226fdc;
+    background-color: #68a6e3;
     padding: .9rem .3rem;
     border-radius: 6px;
     outline: none;
@@ -201,9 +201,16 @@ h4{
     background-color: #8cb6f0;
 }
 
-.izquierda
-{
+.izquierda{
+    weight: 400;
     position: left;
+    border-radius: .5rem;
+    background-color: #68a6e3;   
+    color: #e6f2f2 !important;
+    border-radius: 5px;
+    text-decoration: none;
+    padding: 5px;
+    
 }
 
 
@@ -352,4 +359,25 @@ body{
    background-size: cover;
    background-position: center;
    background-attachment: fixed;
+}
+.letra{
+    color: black;
+}
+.edifoto{
+    position: relative;
+    left: 600px;
+}
+.editboton2{
+   position: relative;
+   left: 30px;
+   
+}
+.colorbt{
+    weight: 400;
+    border-radius: .5rem;
+    background-color: #68a6e3;   
+    color: #e6f2f2 !important;
+    border-radius: 5px;
+    text-decoration: none;
+    padding: 5px;  
 }

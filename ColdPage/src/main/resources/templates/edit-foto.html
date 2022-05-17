@@ -6,6 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="description" content="" />
         <link rel="stylesheet" href="../../css/stylefb.css">
+        <link rel="stylesheet" href="../../css/stylefb2.css">
         <link rel="shortcut icon" href = "img/browser_seeker_icon_220709.png" >
         <link rel="shortcut icon" href = "../img/favicon.jpg" >
         <title>Editar Foto</title>
@@ -56,7 +57,7 @@
                 </div>
             </div>
         </nav>
-        <section class=" m-5">
+        <section class="formregistro2 m-5">
             <section>
                 <div th:if="${exito}!=null" class="card text-white bg-success mb-3" >
                     <div class="card-body">
@@ -71,14 +72,14 @@
                     </div>
                 </div>
             </section>
-            <div class="mb-3" >
+            <div class="edifoto mb-3" >
                 <h3>Foto Actual</h3>
                 <img th:src="@{${usuario.foto}}" class="img-thumbnail rounded float-left" th:alt="${usuario.foto}" style="width: 100px; height: 100px;">
             </div>
             <div class="container-form">
                 <form th:action="@{/usuario/editarFoto}" method="POST">
                     <input hidden th:value="${usuario.id}" name="id">
-                    <div class="mb-3">
+                    <div class="edifoto mb-3">
                         <div class="mb-3">
                             <label for="foto" class="form-label">Ingrese una foto desde una URL:</label>
                             <br>
@@ -86,14 +87,14 @@
                         </div>
                     </div>
                     <div class="mb-3 ">
-                        <button type="submit" class="btn btn-warning">Confirmar Cambio de Foto</button>
+                        <button type="submit" class="edifoto colorbt">Confirmar Cambio de Foto</button>
                     </div>
                 </form>
                 <form th:action="@{/usuario/eliminarFoto}" method="POST">
                     <input hidden th:value="${usuario.id}" name="id">
                     <input hidden th:value="null" name="foto">
                     <div class="mb-3">
-                        <button type="submit" class="btn btn-danger">Eliminar Foto</button>
+                      <button type="submit" class="edifoto colorbt">Eliminar Foto</button>
                     </div>
                 </form>
             </div>

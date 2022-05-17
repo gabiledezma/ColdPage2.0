@@ -7,6 +7,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="description" content="" />
         <link rel="stylesheet" href="../../css/stylefb.css">
+          <link rel="stylesheet" href="../../css/stylefb2.css">
         <link rel="shortcut icon" href = "img/browser_seeker_icon_220709.png" >
         <link rel="shortcut icon" href = "../img/favicon.jpg" >
         <link
@@ -71,28 +72,28 @@
                 </div>
             </div>
 
-            <form th:action="@{/usuario/editar}" method="POST" > 
+            <form th:action="@{/usuario/editar}" class="formregistro2" method="POST"> 
                 <input hidden th:value="${usuario.id}" name="id">
                 <input hidden th:value="${usuario.role}" name="role">
-                <div class="mb-3">
+                <div class="formregistro2 mb-3">
                     <label>Email</label> <br><input type="email" th:value="${usuario.email}" class="form-control" name="email" placeholder="Email">
                 </div><br>
-                <div class="mb-3">
+                <div class="formregistro2 mb-3">
                     <label>Nombre</label> <br><input type="text" th:value="${usuario.nombre}" class="form-control" name="nombre" placeholder="Nombre">
                 </div><br>
-                <div class="mb-3">
+                <div class="formregistro2 mb-3">
                     <label>Telefono</label> <br><input type="text" th:value="${usuario.contacto}" class="form-control" name="contacto" placeholder="Telefono">
                 </div><br>
-                <div class="mb-3">
+                <div class="formregistro2 mb-3">
                     <label for="fechaDeNacimiento"  class="form-label">Fecha De Nacimiento:</label>
                     <input type="date" class="form-control" id="start" name="fechaDeNacimiento"
                            th:value="${usuario.fechaDeNacimiento}"
                            min="1950-01-01" max="2030-12-31">
                 </div> <br>
-                <div class="mb-3">
+                <div class="formregistro2 mb-3">
                     <label>Profesion</label> <br><input type="text" th:value="${usuario.profesion}" class="form-control" name="profesion" placeholder="Profesión:">
                 </div>
-                <div class="mb-3">
+                <div class="formregistro2 mb-3">
                     <label for="pais" class="form-label">Pais</label><br>
                     <select name="pais" class="form-select" aria-label="Default select example">
                         <option value="Elegir" id="A">Elegir opción</option>
@@ -335,27 +336,27 @@
                         <option value="Zimbabue" id="ZW">Zimbabue</option>
                     </select > 
                 </div><br>
-                <div class="mb-3">
+                <div class="formregistro2 mb-3">
                     <label>Provincia</label> <br><input type="text" class="form-control" name="provincia" placeholder="Provincia:">
                 </div><br>
-                <div class="mb-3">
+                <div class="formregistro2 mb-3">
                     <label>Localidad</label> <br><input type="text" class="form-control" name="localidad" placeholder="Localidad:">
                 </div><br>
-                <div class="mb-3">
+                <div class="formregistro2 mb-3">
                     <div class="mb-3">
                         <label for="foto" class="form-label">Ingrese una foto desde una URL:</label>
                         <br>
                         <input type="text" th:value="${usuario.foto}" class="form-control" name="fotourl" placeholder="URL de la Foto:">
                     </div>
                 </div>
-                <div class="mb-3">
+                <div class="formregistro2 mb-3">
                     <h5>Para confirmar los cambios escriba su contraseña: </h5>
                 </div><br>
-                <div class="mb-3">
+                <div class="formregistro2 mb-3">
                     <label>Contraseña</label> <br><input type="password" class="form-control" name="pw1" placeholder="Contraseña:" required>
                 </div><br>
-                <div class="mb-3">
-                    <button type="submit" class="btn btn-primary">Actualizar Datos</button>
+                <div class="formregistro2 mb-3">
+                    <button type="submit" class="editboton2 colorbt izquierda">Actualizar Datos</button>
                 </div>
             </form>
         </div>

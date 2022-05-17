@@ -82,13 +82,13 @@
                     <form class="form form2 form3" th:action="@{/logincheck}" method="POST">
                         <input type="text" placeholder="Correo electronico" name="email">
                         <input type="password" placeholder="Contraseña" name="password">
-                        <input type="submit" placeholder="Iniciar Sesión" name="login">
+                        <button type="submit" class="btn btn-lg izquierda" name="login">Ingresar</button>
                         <div class="border">                    
                         </div>
                         <h4>¿Desea registrarse?</h4>                         
                         <div>  
                             <br>
-                            <button type="button" class="btn btn-primary izquierda" data-bs-toggle="modal" data-bs-target="#resgcliente" ><a href="#">Registrarse</a></button>
+                            <button type="button" class="btn btn-lg izquierda" data-bs-toggle="modal" data-bs-target="#resgcliente" ><a href="#">Registrarse</a></button>
                         </div>
                     </form>
                     <p class="create-page">
@@ -123,9 +123,9 @@
                                 <input class="formregistro" type="text" name="nombre" placeholder="Nombre:">
                                 <input class="formregistro" type="text" name="contacto" placeholder="Teléfono">
                                 <input class="formregistro" type="text" name="profesion" placeholder="Profesión:">
-                                <div class="mb-3">
-                                    <label for="fechaDeNacimiento"  class="form-label formregistro">Fecha De Nacimiento:</label>
-                                    <input type="date" class="form-control formregistro" id="start" name="fechaDeNacimiento"
+                                <div class="formregistro mb-3">
+                                    <label for="fechaDeNacimiento"  class=" formregistro form-label">Fecha De Nacimiento:</label>
+                                    <input type="date" class="formregistro form-control " id="start" name="fechaDeNacimiento"
                                            min="1950-01-01" max="2030-12-31">
                                 </div>
                                 <div class="formregistro mb-3">
@@ -377,7 +377,7 @@
                                     <input type="text" class="form-control"  placeholder="Ingrese Localidad:" name="localidad">
                                 </div>
                                 <div>
-                                    <br><button type="submit" class="btn btn-primary izquierda">Registrarse</button>
+                                    <br><button type="submit" class="izquierda">Registrarse</button>
                                 </div>
                             </form>
                         </div>
