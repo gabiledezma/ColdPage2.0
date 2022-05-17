@@ -1,3 +1,35 @@
+.notificacion{
+  font-family: inherit;
+  font-size: 100%;
+  width: 600px;
+  height: 250px;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.822);
+  border-radius: 7px;
+  margin:auto
+}
+
+.notificacion-navbar{
+  width: 600px;
+  height: 30px;
+  box-shadow: 1px 1px 10px rgba(14, 13, 13, 0.219);
+  display: inline-block;
+}
+
+.notificacion-text{
+  opacity: 0.6;
+  color: black;
+  float: left;
+  
+}
+
+.notificacion-btn{
+  float: right;
+}
+.notificacion-text-aux{
+  font-weight: bold;
+}
+
+
 .form-publicacion{
     font-family: inherit;
     font-size: 100%;
@@ -25,7 +57,7 @@
     font-family: inherit;
     font-size: 100%;
     width: 430px;
-    height: 300px;
+    height: 420px;
     padding: 1rem;
     margin-left: auto;
     margin-right: auto;
@@ -78,6 +110,46 @@
     font-size: 17px;
 }
 
+#element {
+    display: inline-block
+  }
+  
+  #element.animate {
+    transform: translate(-90%);
+    transition-property: transform;
+    transition-duration: 9s;
+    transition-timing-function: linear;
+  }
 
+  #element2 {
+    display: inline-block
+  }
+  
+  #element2.animate {
+    transform: translate(-90%);
+    transition-property: transform;
+    transition-duration: 9s;
+    transition-timing-function: linear;
+  }
 
+  #element3 {
+    display: inline-block
+  }
+  
+  #element3.animate {
+    transform: translate(-90%);
+    transition-property: transform;
+    transition-duration: 9s;
+    transition-timing-function: linear;
+  }
 
+  #element4 {
+    display: inline-block
+  }
+  
+  #element4.animate {
+    transform: translate(-90%);
+    transition-property: transform;
+    transition-duration: 9s;
+    transition-timing-function: linear;
+  }
