@@ -401,3 +401,7 @@ h4{
     50%{background-position:100% 51%}
     100%{background-position:0% 50%}
 }
+.carousel{
+   width: 300px;
+   height: 200px;
+}
