@@ -28,36 +28,36 @@
             </div>
             <form th:action="@{/usuario/registro}" class="form-profesional" method="POST" >
                 <div class="mb-3">
-                    <label for="email" class="form-label">Email</label>
+                    <label for="email" class="form-label bg-light rounded btn">Email:</label><br>
                     <input type="text" class="form-control"  aria-describedby="emailHelp" placeholder="Correo Electrónico" name="email">
                 </div>
                 <div class="mb-3">
-                    <label for="pw1" class="form-label">Contraseña</label>
+                    <label for="pw1" class="form-label bg-light rounded btn">Contraseña:</label>
                     <input type="password" name="pw1" class="form-control" placeholder="Contraseña" >
                 </div>
                 <div class="mb-3"> 
-                    <label for="pw2" class="form-label">Repetir Contraseña</label>
+                    <label for="pw2" class="form-label bg-light rounded btn">Repetir Contraseña:</label>
                     <input type="password" name="pw2" class="form-control" placeholder="Repetir Contraseña" >
                 </div>
                 <div class="mb-3"> 
-                    <label for="nombre" class="form-label">Nombre</label>
-                    <input type="text" class="form-control"  aria-describedby="emailHelp" placeholder="Ingrese el nombre" name="nombre">
+                    <label for="nombre" class="form-label bg-light rounded btn">Nombre:</label>
+                    <input type="text" class="form-control"  aria-describedby="emailHelp" placeholder="Ingrese el Nombre" name="nombre">
                 </div>
                 <div class="mb-3"> 
-                    <label for="contacto" class="form-label">Telefono</label>
-                    <input type="text" class="form-control" placeholder="Ingrese el numero de contacto" name="contacto">
+                    <label for="contacto" class="form-label bg-light rounded btn">Teléfono:</label>
+                    <input type="text" class="form-control" placeholder="Ingrese su Número de Teléfono" name="contacto">
                 </div>
                 <div class="mb-3"> 
-                    <label for="profesion" class="form-label">Profesión</label>
-                    <input type="text" class="form-control" placeholder="Ingrese su Profesion" name="profesion">
+                    <label for="profesion" class="form-label bg-light rounded btn">Profesión:</label>
+                    <input type="text" class="form-control" placeholder="Ingrese su Profesión" name="profesion">
                 </div>
                 <div class="mb-3">
-                    <label for="fechaDeNacimiento"  class="form-label">Fecha De Nacimiento:</label>
+                    <label for="fechaDeNacimiento"  class="form-label bg-light rounded btn">Fecha De Nacimiento:</label>
                     <input type="date" class="form-control" id="start" name="fechaDeNacimiento"
                            min="1950-01-01" max="2030-12-31">
                 </div>
                 <div class="mb-3">
-                    <label for="pais" class="form-label">Pais</label><br>
+                    <label for="pais" class="form-label bg-light rounded btn">Pais:</label><br>
                     <select name="pais" class="form-select" aria-label="Default select example">
                         <option value="Elegir" id="A">Elegir opción</option>
                         <option value="Afganistán" id="AF">Afganistán</option>
@@ -300,12 +300,12 @@
                     </select > 
                 </div>
                 <div class="mb-3">
-                    <label for="provincia" class="form-label">Provincia</label> <br>
-                    <input type="text" class="form-control"  placeholder="Ingrese provincia" name="provincia">
+                    <label for="provincia" class="form-label bg-light rounded btn">Provincia:</label> <br>
+                    <input type="text" class="form-control"  placeholder="Ingrese Provincia" name="provincia">
                 </div>
                 <div class="mb-3">
-                    <label for="localidad" class="form-label">Localidad</label> <br>
-                    <input type="text" class="form-control"  placeholder="Ingrese localidad" name="localidad">
+                    <label for="localidad" class="form-label bg-light rounded btn">Localidad:</label> <br>
+                    <input type="text" class="form-control"  placeholder="Ingrese Localidad" name="localidad">
                 </div>
                 <div class="mb-3">
                     <br><button type="submit" class="btn btn-primary">Registrarse</button>
