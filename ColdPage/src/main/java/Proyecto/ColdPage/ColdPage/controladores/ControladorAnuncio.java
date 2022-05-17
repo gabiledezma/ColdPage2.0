@@ -29,8 +29,24 @@ public class ControladorAnuncio {
     
     @GetMapping("/list")
     public String listAnuncio (ModelMap model){
-        List<Anuncio> anuncios = sa.listarAnuncios();
+       List<Anuncio> anuncios = sa.listarAnuncios();
         model.put("anuncios", anuncios);
         return "index";
+    }
+    
+     @PostMapping("/crear2")
+    public String createAnuncio(ModelMap model, @RequestParam String nombre, @RequestParam String descripcion, @RequestParam Long telefono, @RequestParam String presupuesto) throws Exception{
+        
+        sa.crearAnuncio(nombre, descripcion, telefono, presupuesto);
+        
+        return "list-profesionales";
+        
+    }
+    
+    @GetMapping("/list2")
+    public String Anuncio (ModelMap model){
+        List<Anuncio> anuncios = sa.listarAnuncios();
+        model.put("anuncios", anuncios);
+        return "list-profesionales";
     }
 }

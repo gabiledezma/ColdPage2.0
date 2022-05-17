@@ -73,41 +73,40 @@
                 </div>
             </div>
             <div class="form-trabajo" style="display: none;" id="an">
-                <form class="">
+                <form th:action="@{/anuncio/crear}">
                     <div class="col-12">
                         <label for="inputAddress2" class="form-label"></label>
-                        <input type="text" class="form-control"  placeholder="Titulo del trabajo que ofrecera">
+                        <input type="text" class="form-control"  placeholder="Titulo del trabajo que ofrecera" name="nombre">
                     </div>
                     <div class="col-12">
                         <label for="inputAddress2" class="form-label"></label>
-                        <input type="text" class="form-control input-description" placeholder="Descripcion del trabajo">
+                        <input type="text" class="form-control input-description" placeholder="Descripcion del trabajo" name="descripcion">
                     </div>
                     <div class="col-12">
                       <label for="inputAddress2" class="form-label"></label>
-                      <input type="number" class="form-control" placeholder="Telefono">
+                      <input type="number" class="form-control" placeholder="Telefono" name="telefono">
                     </div>
                   <div class="col-12">
                     <label for="inputAddress2" class="form-label"></label>
-                    <input type="text" class="form-control" placeholder="Presupuesto">
+                    <input type="text" class="form-control" placeholder="Presupuesto" name="presupuesto">
                   </div>
                     <br>
                     <button type="submit">Publicar</button>
                 </form>
             </div>
             
-                <div class="notificacion" id="myDiv" style="display: block;">
+                <div class="notificacion" id="myDiv" style="display: block;" th:each="anuncios : ${anuncios}">
                   <div class="notificacion-navbar">
-                    <th>
-                      <p class="notificacion-text">nombre de usuario</p>
+                      <th>
                       <button type="button" class="btn-close notificacion-btn" id="close"></button>
                     </th>
                   </div>
                   <div>
-                    <h4>trabajo</h1>
-                    <p><center>descripcion del trabajo 
+                    <h4 th:text="${anuncios.nombre}"></h4>
+                    <p><center th:text="${anuncios.descripcion}">
                     </center></p>
-                    <p class="notificacion-text-aux notificacion-text">Telefono: <p class="notificacion-text-aux"> 112223333</p></p>
-                    <p class="notificacion-text-aux notificacion-text">Presupuesto: <p class="notificacion-text-aux"> 30000$</p></p>
+                    <p class="notificacion-text-aux notificacion-text">Telefono: <p class="notificacion-text-aux" th:text="${anuncios.telefono}"></p></p>
+                    <p class="notificacion-text-aux notificacion-text">Presupuesto: <p class="notificacion-text-aux" th:text="${anuncios.presupuesto}"></p></p>
                   </div>
                 </div>
             <div class="container m-5" >
