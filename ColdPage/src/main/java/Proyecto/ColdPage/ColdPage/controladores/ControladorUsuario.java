@@ -165,8 +165,10 @@ public class ControladorUsuario {
     }
 
     @GetMapping("/listarPorNombre")
-    public String listarPorNombre(@RequestParam String nombre, ModelMap model) {
+    public String listarPorNombre(@RequestParam String nombre, ModelMap model, HttpSession session) {
         try {
+            Usuario u = (Usuario) session.getAttribute("usuariosession");
+            model.put("usuario", u);
             List<Usuario> profesionales = su.buscarPorNombre(nombre);
             model.put("profesionales", profesionales);
         } catch (Exception e) {
@@ -175,8 +177,10 @@ public class ControladorUsuario {
     }
 
     @GetMapping("/listarPorProfesion")
-    public String listarPorProfesion(@RequestParam String profesion, ModelMap model) {
+    public String listarPorProfesion(@RequestParam String profesion, ModelMap model, HttpSession session) {
         try {
+            Usuario u = (Usuario) session.getAttribute("usuariosession");
+            model.put("usuario", u);
             List<Usuario> profesionales = su.buscarPorProfesion(profesion);
             model.put("profesionales", profesionales);
         } catch (Exception e) {
@@ -185,8 +189,10 @@ public class ControladorUsuario {
     }
 
     @GetMapping("/listarPorPais")
-    public String listarPorPais(@RequestParam String pais, ModelMap model) {
+    public String listarPorPais(@RequestParam String pais, ModelMap model, HttpSession session) {
         try {
+            Usuario u = (Usuario) session.getAttribute("usuariosession");
+            model.put("usuario", u);
             List<Usuario> profesionales = su.buscarPorPais(pais);
             model.put("profesionales", profesionales);
         } catch (Exception e) {
@@ -195,8 +201,10 @@ public class ControladorUsuario {
     }
 
     @GetMapping("/listarPorProvincia")
-    public String listarPorProvincia(@RequestParam String provincia, ModelMap model) {
+    public String listarPorProvincia(@RequestParam String provincia, ModelMap model, HttpSession session) {
         try {
+            Usuario u = (Usuario) session.getAttribute("usuariosession");
+            model.put("usuario", u);
             List<Usuario> profesionales = su.buscarPorProvincia(provincia);
             model.put("profesionales", profesionales);
         } catch (Exception e) {
@@ -205,8 +213,10 @@ public class ControladorUsuario {
     }
 
     @GetMapping("/listarPorLocalidad")
-    public String listarPorLocalidad(@RequestParam String localidad, ModelMap model) {
+    public String listarPorLocalidad(@RequestParam String localidad, ModelMap model, HttpSession session) {
         try {
+            Usuario u = (Usuario) session.getAttribute("usuariosession");
+            model.put("usuario", u);
             List<Usuario> profesionales = su.buscarPorLocalidad(localidad);
             model.put("profesionales", profesionales);
         } catch (Exception e) {
@@ -215,8 +225,10 @@ public class ControladorUsuario {
     }
 
     @GetMapping("/listarTodos")
-    public String listarTodos(ModelMap model) {
+    public String listarTodos(ModelMap model, HttpSession session) {
         try {
+            Usuario u = (Usuario) session.getAttribute("usuariosession");
+            model.put("usuario", u);
             List<Usuario> profesionales = su.findAll();
             model.put("profesionales", profesionales);
         } catch (Exception e) {
@@ -225,8 +237,10 @@ public class ControladorUsuario {
     }
 
     @GetMapping("/ordenarPorProfesion")
-    public String ordenarPorProfesion(ModelMap model) {
+    public String ordenarPorProfesion(ModelMap model, HttpSession session) {
         try {
+            Usuario u = (Usuario) session.getAttribute("usuariosession");
+            model.put("usuario", u);
             List<Usuario> profesionales = su.ordenarPorProfesion();
             model.put("profesionales", profesionales);
         } catch (Exception e) {
@@ -235,8 +249,10 @@ public class ControladorUsuario {
     }
 
     @GetMapping("/ordenarPorNombre")
-    public String ordenarPorNombre(ModelMap model) {
+    public String ordenarPorNombre(ModelMap model, HttpSession session) {
         try {
+            Usuario u = (Usuario) session.getAttribute("usuariosession");
+            model.put("usuario", u);
             List<Usuario> profesionales = su.ordenarPorNombre();
             model.put("profesionales", profesionales);
         } catch (Exception e) {
@@ -245,8 +261,10 @@ public class ControladorUsuario {
     }
 
     @GetMapping("/ordenarPorPais")
-    public String ordenarPorPais(ModelMap model) {
+    public String ordenarPorPais(ModelMap model, HttpSession session) {
         try {
+            Usuario u = (Usuario) session.getAttribute("usuariosession");
+            model.put("usuario", u);
             List<Usuario> profesionales = su.ordenarPorPais();
             model.put("profesionales", profesionales);
         } catch (Exception e) {
@@ -255,8 +273,10 @@ public class ControladorUsuario {
     }
 
     @GetMapping("/ordenarPorProvincia")
-    public String ordenarPorProvincia(ModelMap model) {
+    public String ordenarPorProvincia(ModelMap model, HttpSession session) {
         try {
+            Usuario u = (Usuario) session.getAttribute("usuariosession");
+            model.put("usuario", u);
             List<Usuario> profesionales = su.ordenarPorProvincia();
             model.put("profesionales", profesionales);
         } catch (Exception e) {
@@ -265,8 +285,10 @@ public class ControladorUsuario {
     }
 
     @GetMapping("/ordenarPorLocalidad")
-    public String ordenarPorLocalidad(ModelMap model) {
+    public String ordenarPorLocalidad(ModelMap model, HttpSession session) {
         try {
+            Usuario u = (Usuario) session.getAttribute("usuariosession");
+            model.put("usuario", u);
             List<Usuario> profesionales = su.ordenarPorLocalidad();
             model.put("profesionales", profesionales);
         } catch (Exception e) {
@@ -275,8 +297,10 @@ public class ControladorUsuario {
     }
 
     @GetMapping("/ordenarPorProfesion2")
-    public String ordenarPorProfesion2(ModelMap model) {
+    public String ordenarPorProfesion2(ModelMap model, HttpSession session) {
         try {
+            Usuario u = (Usuario) session.getAttribute("usuariosession");
+            model.put("usuario", u);
             List<Usuario> profesionales = su.ordenarPorProfesion2();
             model.put("profesionales", profesionales);
         } catch (Exception e) {
@@ -285,8 +309,10 @@ public class ControladorUsuario {
     }
 
     @GetMapping("/ordenarPorNombre2")
-    public String ordenarPorNombre2(ModelMap model) {
+    public String ordenarPorNombre2(ModelMap model, HttpSession session) {
         try {
+            Usuario u = (Usuario) session.getAttribute("usuariosession");
+            model.put("usuario", u);
             List<Usuario> profesionales = su.ordenarPorNombre2();
             model.put("profesionales", profesionales);
         } catch (Exception e) {
@@ -295,8 +321,10 @@ public class ControladorUsuario {
     }
 
     @GetMapping("/ordenarPorPais2")
-    public String ordenarPorPais2(ModelMap model) {
+    public String ordenarPorPais2(ModelMap model, HttpSession session) {
         try {
+            Usuario u = (Usuario) session.getAttribute("usuariosession");
+            model.put("usuario", u);
             List<Usuario> profesionales = su.ordenarPorPais2();
             model.put("profesionales", profesionales);
         } catch (Exception e) {
@@ -305,8 +333,10 @@ public class ControladorUsuario {
     }
 
     @GetMapping("/ordenarPorProvincia2")
-    public String ordenarPorProvincia2(ModelMap model) {
+    public String ordenarPorProvincia2(ModelMap model, HttpSession session) {
         try {
+            Usuario u = (Usuario) session.getAttribute("usuariosession");
+            model.put("usuario", u);
             List<Usuario> profesionales = su.ordenarPorProvincia2();
             model.put("profesionales", profesionales);
         } catch (Exception e) {
@@ -315,8 +345,10 @@ public class ControladorUsuario {
     }
 
     @GetMapping("/ordenarPorLocalidad2")
-    public String ordenarPorLocalidad2(ModelMap model) {
+    public String ordenarPorLocalidad2(ModelMap model, HttpSession session) {
         try {
+            Usuario u = (Usuario) session.getAttribute("usuariosession");
+            model.put("usuario", u);
             List<Usuario> profesionales = su.ordenarPorLocalidad2();
             model.put("profesionales", profesionales);
         } catch (Exception e) {

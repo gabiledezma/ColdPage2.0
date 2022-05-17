@@ -44,7 +44,6 @@ public class ControladorPrincipal {
             System.out.println(e.getMessage());
             modelo.put("error", "Faltó algún dato.");
             return "registro";
-
         }
     }
 
