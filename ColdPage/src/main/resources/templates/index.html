@@ -30,9 +30,11 @@
                             <li class="nav-item" sec:authorize="hasRole('ADMIN')">
                                 <a class="nav-link" th:href="@{/admin/}">Lista de Usuarios</a>
                             </li>
-                            <li class="nav-item" sec:authorize="isAuthenticated()">
-                                <a class="nav-link" th:href="@{/usuario/perfil}" th:text="${usuario.nombre}"></a>
-                            </li>
+                            <div sec:authorize="isAuthenticated()">
+                                <li class="nav-item" >
+                                    <a class="nav-link" th:href="@{/usuario/perfil}" th:text="${usuario.nombre}"></a>
+                                </li>
+                            </div>
                             <li class="nav-item" sec:authorize="!hasAnyRole('ADMIN','USER')">
                                 <a class="nav-link" th:href="@{/usuario/registro}">Registrarse</a>
                             </li>
@@ -58,7 +60,7 @@
                 <p class="card-text" th:text="${logout}"></p>
             </div>
         </div>
-        <div class="container m-5" >
+        <div class="container m-5">
             <table class="table table-dark">
                 <thead>
                     <tr>
