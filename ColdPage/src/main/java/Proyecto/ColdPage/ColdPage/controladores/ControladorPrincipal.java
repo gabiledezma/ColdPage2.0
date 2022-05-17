@@ -44,7 +44,6 @@ public class ControladorPrincipal {
             System.out.println(e.getMessage());
             modelo.put("error", "Faltó algún dato.");
             return "registro";
-
         }
     }
 
@@ -59,4 +58,15 @@ public class ControladorPrincipal {
         return "login";
     }
 
+    @GetMapping("/perfil")
+    public String perfil(ModelMap model, HttpSession session) {
+        try {
+            Usuario u = (Usuario) session.getAttribute("usuariosession");
+            model.put("usuario", u);
+        } catch (Exception e) {
+
+        }
+        return "perfil";
+    }
+    
 }

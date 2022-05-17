@@ -84,13 +84,13 @@
                     <label>Telefono</label> <br><input type="text" th:value="${usuario.contacto}" class="form-control" name="contacto" placeholder="Telefono">
                 </div><br>
                 <div class="mb-3">
-                    <label for="fechaDeNacimiento"  class="form-label">Fecha De nacimiento:</label>
+                    <label for="fechaDeNacimiento"  class="form-label">Fecha De Nacimiento:</label>
                     <input type="date" class="form-control" id="start" name="fechaDeNacimiento"
                            th:value="${usuario.fechaDeNacimiento}"
                            min="1950-01-01" max="2030-12-31">
                 </div> <br>
                 <div class="mb-3">
-                    <label>Profesion</label> <br><input type="text" th:value="${usuario.profesion}" class="form-control" name="profesion" placeholder="Profesion">
+                    <label>Profesion</label> <br><input type="text" th:value="${usuario.profesion}" class="form-control" name="profesion" placeholder="Profesión:">
                 </div>
                 <div class="mb-3">
                     <label for="pais" class="form-label">Pais</label><br>
@@ -336,26 +336,26 @@
                     </select > 
                 </div><br>
                 <div class="mb-3">
-                    <label>Provincia</label> <br><input type="text" class="form-control" name="provincia" placeholder="Provincia">
+                    <label>Provincia</label> <br><input type="text" class="form-control" name="provincia" placeholder="Provincia:">
                 </div><br>
                 <div class="mb-3">
-                    <label>Localidad</label> <br><input type="text" class="form-control" name="localidad" placeholder="Localidad">
+                    <label>Localidad</label> <br><input type="text" class="form-control" name="localidad" placeholder="Localidad:">
                 </div><br>
                 <div class="mb-3">
                     <div class="mb-3">
                         <label for="foto" class="form-label">Ingrese una foto desde una URL:</label>
                         <br>
-                        <input type="text" th:value="${usuario.foto}" class="form-control" name="fotourl" placeholder="URL de la foto">
+                        <input type="text" th:value="${usuario.foto}" class="form-control" name="fotourl" placeholder="URL de la Foto:">
                     </div>
                 </div>
                 <div class="mb-3">
                     <h5>Para confirmar los cambios escriba su contraseña: </h5>
                 </div><br>
                 <div class="mb-3">
-                    <label>Contraseña</label> <br><input type="password" class="form-control" name="pw1" placeholder="Contraseña" required>
+                    <label>Contraseña</label> <br><input type="password" class="form-control" name="pw1" placeholder="Contraseña:" required>
                 </div><br>
                 <div class="mb-3">
-                    <button type="submit" class="btn btn-primary"> Actualizar Datos </button>
+                    <button type="submit" class="btn btn-primary">Actualizar Datos</button>
                 </div>
             </form>
         </div>
