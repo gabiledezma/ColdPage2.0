@@ -41,25 +41,25 @@
                 </div>
             </nav>
         </header>
-        <section class=" m-5">
-            <section>
-                <div th:if="${exito}!=null" class="card text-white bg-success mb-3" >
-                    <div class="card-body">
-                        <h5 class="card-title">Exito</h5>
-                        <p class="card-text" th:text="${exito}"></p>
-                    </div>
+        <section>
+            <div th:if="${exito}!=null" class="card text-white bg-success mb-3" >
+                <div class="card-body">
+                    <h5 class="card-title">Exito</h5>
+                    <p class="card-text" th:text="${exito}"></p>
                 </div>
-                <div th:if="${error}!=null" class="card text-white bg-danger mb-3" >
-                    <div class="card-body">
-                        <h5 class="card-title">Error</h5>
-                        <p class="card-text" th:text="${error}"></p>
-                    </div>
+            </div>
+            <div th:if="${error}!=null" class="card text-white bg-danger mb-3" >
+                <div class="card-body">
+                    <h5 class="card-title">Error</h5>
+                    <p class="card-text" th:text="${error}"></p>
                 </div>
-            </section>
+            </div>
+        </section>
+        <section class="m-5">
+
             <h1 class="perfil">Mi Perfil</h1>
             <div class="perfil mb-3">
-                <div class="mb-3" >
-                    <h3>Foto</h3>
+                <div class="mb-3 " >
                     <img th:src="@{${usuario.foto}}" class="img-thumbnail rounded float-left" th:alt="${usuario.foto}" style="width: 100px; height: 100px;">
                 </div>
             </div>
@@ -73,8 +73,8 @@
                     <p th:text="${usuario.fechaDeNacimiento}"> </p>
                 </div >
                 <div class="mb-3">
-                     <h3>Domicilio</h3>
-                     <p th:text="${usuario.domicilio}"> </p>
+                    <h3>Domicilio</h3>
+                    <p th:text="${usuario.domicilio}"> </p>
                 </div>
                 <div class="mb-3">
                     <h3>Teléfono</h3>
